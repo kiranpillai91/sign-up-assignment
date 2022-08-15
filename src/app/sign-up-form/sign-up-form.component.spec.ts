@@ -2,6 +2,7 @@ import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testin
 import { By } from '@angular/platform-browser';
 import { delay, of, throwError } from 'rxjs';
 import { SignUpService } from '../../services/sign-up.service';
+import { TransalationPipe } from '../Pipe/transalation.pipe';
 
 import { SignUpFormComponent } from './sign-up-form.component';
 
@@ -23,7 +24,7 @@ describe('SignUpFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [SignUpFormComponent],
+      declarations: [TransalationPipe,SignUpFormComponent],
       providers: [
         {
           provide: SignUpService, useValue: signUpServiceSpy
