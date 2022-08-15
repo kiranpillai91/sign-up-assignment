@@ -1,0 +1,27 @@
+.background-image-signUp {
+    background-image: url('https://images.pexels.com/photos/1797428/pexels-photo-1797428.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.btn-primary {
+    font-size: 19px;
+    color: #fff;
+    background-color: #ff6200;
+    border-radius: 0;
+    text-decoration: none;
+    border-color: #ff6200;
+}
+
+.btn:focus {
+    box-shadow: none;
+    border-color: #ff6200;
+}
+
+.toast {
+    color: red;
+    display: block;
+    background-color: lightgray;
+    font-weight: 500;
+    width: 100%;
+}

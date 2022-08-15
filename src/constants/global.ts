@@ -1,0 +1,1 @@
+export const RESTRICTED_EMAIL_DOMAIN = ['test.com', 'test.net', 'mailtest.com'];

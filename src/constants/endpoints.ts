@@ -1,0 +1,1 @@
+export const SIGN_UP_URL = 'https://demo-api.now.sh/users';

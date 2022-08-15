@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    min-height: 100vh;
+}
+
+.w-80-p {
+    width: 80%;
+}
+
+.m-0-a {
+    margin: 0 auto !important;
+}
+
+.h-100-vh {
+    height: 100vh;
+}
+
+.h-100-p {
+    height: 100%;
+}
+
+
+.background-black-color {
+    background-color: black;
+}
+
+.background-white-color {
+    background-color: white;
+}
