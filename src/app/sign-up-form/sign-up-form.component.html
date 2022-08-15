@@ -1,15 +1,15 @@
 <div class="row row-cols-1 w-80-p m-0-a h-100-p background-white-color">
     <div class="col-sm-7 background-image-signUp"></div>
     <div class="col-sm-5 mt-3">
-        <h3 class="mb-2 text-center">Sign Up</h3>
+        <h3 class="mb-2 text-center">{{'SIGN_UP' | transalation}}</h3>
         <p class="mb-4 text-center">
-            A few clicks away from creating the account.
+            {{'INTRO' | transalation}}
         </p>
 
         <div *ngIf="isServiceError" class="toast align-items-center mb-4">
             <div class="d-flex">
                 <div class="toast-body" data-testid="toast-body-testId">
-                    Something went wrong.
+                    {{'SOMETHING_WENT_WRONG' | transalation}}
                 </div>
                 <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"
                     (click)="closeToast()"></button>
@@ -18,55 +18,52 @@
         <form [formGroup]="signUpForm" (ngSubmit)="onSignUp()" data-testid="sign-up-form">
             <div class="form-group mb-3">
                 <input type="text" formControlName="firstName" class="form-control" id="firstName"
-                    placeholder="Enter First Name">
+                    [placeholder]="'FIRSTNAME_PLACEHOLDER' | transalation">
                 <ng-container
                     *ngIf="signUpForm.get('firstName')?.invalid &&  signUpForm.get('firstName')?.errors && (signUpForm.get('firstName')?.dirty || signUpForm.get('firstName')?.touched)">
                     <small class="text-danger" *ngIf="signUpForm.get('firstName')?.hasError('required')">
-                        This field is required.
+                        {{'REQUIRED' | transalation}}
                     </small>
                 </ng-container>
             </div>
             <div class="form-group mb-3">
                 <input type="text" formControlName="lastName" class="form-control" id="lastName"
-                    placeholder="Enter Last Name">
+                    [placeholder]="'LASTNAME_PLACEHOLDER' | transalation">
                 <ng-container
                     *ngIf="signUpForm.get('lastName')?.invalid &&  signUpForm.get('lastName')?.errors && (signUpForm.get('lastName')?.dirty || signUpForm.get('lastName')?.touched)">
                     <small class="text-danger" *ngIf="signUpForm.get('lastName')?.hasError('required')">
-                        This field is required.
+                        {{'REQUIRED' | transalation}}
                     </small>
                 </ng-container>
             </div>
             <div class="form-group mb-3">
-                <input type="email" formControlName="email" class="form-control" id="email" placeholder="Enter email">
+                <input type="email" formControlName="email" class="form-control" id="email" [placeholder]="'EMAIL_PLACEHOLDER' | transalation">
                 <ng-container
                     *ngIf="signUpForm.get('email')?.invalid &&  signUpForm.get('email')?.errors && (signUpForm.get('email')?.dirty || signUpForm.get('email')?.touched)">
                     <small class="text-danger" *ngIf="signUpForm.get('email')?.hasError('required')">
-                        This field is required.
+                        {{'REQUIRED' | transalation}}
                     </small>
                     <small class="text-danger" *ngIf="signUpForm.get('email')?.hasError('pattern')">
-                        Enter a valid email.
+                        {{'INVALID_EMAIL' | transalation}}
                     </small>
                     <small class="text-danger" *ngIf="signUpForm.get('email')?.hasError('invalidEmailDomain')">
-                        Enter a valid email domain.
+                        {{'INVALID_EMAIL_DOMAIN' | transalation}}
                     </small>
                 </ng-container>
             </div>
             <div class="form-group">
-                <input type="password" formControlName="password" class="form-control" id="password"
-                    placeholder="Password">
-                <ng-container *ngIf="signUpForm.get('password')?.invalid &&  signUpForm.get('password')?.errors && 
-            (signUpForm.get('password')?.dirty || signUpForm.get('password')?.touched);else passwordContains">
+                <input type="password" formControlName="password" class="form-control" id="password" [placeholder]="'PASSWORD_PLACEHOLDER' | transalation">
+                <ng-container *ngIf="signUpForm.get('password')?.invalid &&  signUpForm.get('password')?.errors && (signUpForm.get('password')?.dirty || signUpForm.get('password')?.touched);else passwordContains">
                     <small class="text-danger" *ngIf="signUpForm.get('password')?.hasError('required')">
-                        This field is required.
+                        {{'REQUIRED' | transalation}}
                     </small>
                     <small class="text-danger" *ngIf="signUpForm.get('password')?.hasError('invalidPassword')">
-                        Password should have minimum 8 characters, at least 1 uppercase letter, 1 lowercase
-                        letter
+                        {{'INVALID_PASSWORD_COMBINATION' | transalation}}
                     </small>
                 </ng-container>
                 <ng-template #passwordContains>
                     <small class="text-danger" *ngIf="signUpForm?.errors?.['passwordContains']">
-                        Password should not contain first name or last name.
+                        {{'INVALID_PASSWORD_CONTAINS_FNAME_LNAME' | transalation}}
                     </small>
                 </ng-template>
             </div>
@@ -74,10 +71,10 @@
                 <button class="btn btn-primary mt-3" type="submit" [disabled]="signUpForm.invalid">
                     <ng-container *ngIf="isLoading;else signUp"> <span class="spinner-border spinner-border-sm"
                             role="status" aria-hidden="true"></span>
-                        Signing up...
+                        {{'SIGN_UP_PROGRESS_BUTTON_TEXT' | transalation}}
                     </ng-container>
                     <ng-template #signUp>
-                        Sign Up
+                       {{'SIGN_UP_BUTTON_TEXT' | transalation}}
                     </ng-template>
                 </button>
             </div>
