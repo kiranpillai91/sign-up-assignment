@@ -5,7 +5,6 @@
         <p class="mb-4 text-center">
             {{'INTRO' | transalation}}
         </p>
-
         <div *ngIf="isServiceError" class="toast align-items-center mb-4">
             <div class="d-flex">
                 <div class="toast-body" data-testid="toast-body-testId">
@@ -58,7 +57,7 @@
             <div class="form-group">
                 <input type="password" formControlName="password" class="form-control" id="password"
                     [ngClass]="{'error-highlighter': (signUpForm.get('password')?.invalid &&  (signUpForm.get('password')?.dirty || signUpForm.get('password')?.touched) || 
-                    signUpForm?.errors?.['passwordContains'])}"
+                    signUpForm.errors?.['passwordContains'])}"
                     [placeholder]="'PASSWORD_PLACEHOLDER' | transalation">
                 <ng-container
                     *ngIf="signUpForm.get('password')?.invalid &&  signUpForm.get('password')?.errors && (signUpForm.get('password')?.dirty || signUpForm.get('password')?.touched);else passwordContains">
