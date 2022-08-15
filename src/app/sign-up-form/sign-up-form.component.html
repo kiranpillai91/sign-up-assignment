@@ -18,6 +18,7 @@
         <form [formGroup]="signUpForm" (ngSubmit)="onSignUp()" data-testid="sign-up-form">
             <div class="form-group mb-3">
                 <input type="text" formControlName="firstName" class="form-control" id="firstName"
+                    [ngClass]="{'error-highlighter': signUpForm.get('firstName')?.invalid && (signUpForm.get('firstName')?.dirty || signUpForm.get('firstName')?.touched)}"
                     [placeholder]="'FIRSTNAME_PLACEHOLDER' | transalation">
                 <ng-container
                     *ngIf="signUpForm.get('firstName')?.invalid &&  signUpForm.get('firstName')?.errors && (signUpForm.get('firstName')?.dirty || signUpForm.get('firstName')?.touched)">
@@ -28,6 +29,7 @@
             </div>
             <div class="form-group mb-3">
                 <input type="text" formControlName="lastName" class="form-control" id="lastName"
+                    [ngClass]="{'error-highlighter': signUpForm.get('lastName')?.invalid &&  (signUpForm.get('lastName')?.dirty || signUpForm.get('lastName')?.touched)}"
                     [placeholder]="'LASTNAME_PLACEHOLDER' | transalation">
                 <ng-container
                     *ngIf="signUpForm.get('lastName')?.invalid &&  signUpForm.get('lastName')?.errors && (signUpForm.get('lastName')?.dirty || signUpForm.get('lastName')?.touched)">
@@ -37,7 +39,9 @@
                 </ng-container>
             </div>
             <div class="form-group mb-3">
-                <input type="email" formControlName="email" class="form-control" id="email" [placeholder]="'EMAIL_PLACEHOLDER' | transalation">
+                <input type="email" formControlName="email" class="form-control" id="email"
+                    [ngClass]="{'error-highlighter': signUpForm.get('email')?.invalid &&  (signUpForm.get('email')?.dirty || signUpForm.get('email')?.touched)}"
+                    [placeholder]="'EMAIL_PLACEHOLDER' | transalation">
                 <ng-container
                     *ngIf="signUpForm.get('email')?.invalid &&  signUpForm.get('email')?.errors && (signUpForm.get('email')?.dirty || signUpForm.get('email')?.touched)">
                     <small class="text-danger" *ngIf="signUpForm.get('email')?.hasError('required')">
@@ -52,8 +56,12 @@
                 </ng-container>
             </div>
             <div class="form-group">
-                <input type="password" formControlName="password" class="form-control" id="password" [placeholder]="'PASSWORD_PLACEHOLDER' | transalation">
-                <ng-container *ngIf="signUpForm.get('password')?.invalid &&  signUpForm.get('password')?.errors && (signUpForm.get('password')?.dirty || signUpForm.get('password')?.touched);else passwordContains">
+                <input type="password" formControlName="password" class="form-control" id="password"
+                    [ngClass]="{'error-highlighter': (signUpForm.get('password')?.invalid &&  (signUpForm.get('password')?.dirty || signUpForm.get('password')?.touched) || 
+                    signUpForm?.errors?.['passwordContains'])}"
+                    [placeholder]="'PASSWORD_PLACEHOLDER' | transalation">
+                <ng-container
+                    *ngIf="signUpForm.get('password')?.invalid &&  signUpForm.get('password')?.errors && (signUpForm.get('password')?.dirty || signUpForm.get('password')?.touched);else passwordContains">
                     <small class="text-danger" *ngIf="signUpForm.get('password')?.hasError('required')">
                         {{'REQUIRED' | transalation}}
                     </small>
@@ -74,7 +82,7 @@
                         {{'SIGN_UP_PROGRESS_BUTTON_TEXT' | transalation}}
                     </ng-container>
                     <ng-template #signUp>
-                       {{'SIGN_UP_BUTTON_TEXT' | transalation}}
+                        {{'SIGN_UP_BUTTON_TEXT' | transalation}}
                     </ng-template>
                 </button>
             </div>

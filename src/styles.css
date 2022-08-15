@@ -27,3 +27,8 @@ body {
 .background-white-color {
     background-color: white;
 }
+
+.error-highlighter {
+    border: 2px solid red !important;
+    box-shadow: none !important;
+}
