@@ -7,12 +7,14 @@ import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { TransalationPipe } from '../pipe/transalation.pipe';
+import { ToastComponent } from './toast/toast.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignUpFormComponent,
-    TransalationPipe
+    TransalationPipe,
+    ToastComponent
   ],
   imports: [
     BrowserModule,

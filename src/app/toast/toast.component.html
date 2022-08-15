@@ -1,0 +1,9 @@
+<div *ngIf="show" class="toast align-items-center" [ngClass]="classNames">
+    <div class="d-flex">
+        <div class="toast-body" data-testid="toast-body-testId">
+            {{'SOMETHING_WENT_WRONG' | transalation}}
+        </div>
+        <button type="button" class="btn-close me-2 m-auto toast-close-testId" data-bs-dismiss="toast" aria-label="Close"
+            (click)="onClose()" data-testid="toast-close-testId"></button>
+    </div>
+</div>

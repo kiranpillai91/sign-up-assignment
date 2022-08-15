@@ -17,11 +17,3 @@
     box-shadow: none;
     border-color: #ff6200;
 }
-
-.toast {
-    color: red;
-    display: block;
-    background-color: lightgray;
-    font-weight: 500;
-    width: 100%;
-}

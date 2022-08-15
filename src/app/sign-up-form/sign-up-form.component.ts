@@ -33,13 +33,13 @@ export class SignUpFormComponent {
       .subscribe(() => {
         this.isLoading = false;
       }, () => {
-        this.isServiceError = true;
+        this.setServiceError(true);
         this.isLoading = false;
       });
   }
 
-  closeToast = () => {
-    this.isServiceError = false;
+  setServiceError = (value : boolean) => {
+    this.isServiceError = value;
   }
 
 }

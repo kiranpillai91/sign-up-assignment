@@ -5,15 +5,7 @@
         <p class="mb-4 text-center">
             {{'INTRO' | transalation}}
         </p>
-        <div *ngIf="isServiceError" class="toast align-items-center mb-4">
-            <div class="d-flex">
-                <div class="toast-body" data-testid="toast-body-testId">
-                    {{'SOMETHING_WENT_WRONG' | transalation}}
-                </div>
-                <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"
-                    (click)="closeToast()"></button>
-            </div>
-        </div>
+        <app-toast [show]="isServiceError" [classNames]="'mb-4'" (onCloseEvent)="setServiceError($event)"></app-toast>
         <form [formGroup]="signUpForm" (ngSubmit)="onSignUp()" data-testid="sign-up-form">
             <div class="form-group mb-3">
                 <input type="text" formControlName="firstName" class="form-control" id="firstName"
