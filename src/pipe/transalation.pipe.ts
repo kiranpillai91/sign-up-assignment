@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { TranslationTree } from '../../constants/translation.model';
-import { Translation } from '../../constants/translation';
+import { TranslationTree } from '../constants/translation.model';
+import { Translation } from '../constants/translation';
 
 @Pipe({
   name: 'transalation'

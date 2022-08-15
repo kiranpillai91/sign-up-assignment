@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { TransalationPipe } from './Pipe/transalation.pipe';
+import { TransalationPipe } from '../pipe/transalation.pipe';
 
 @NgModule({
   declarations: [
